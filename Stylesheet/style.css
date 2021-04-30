@@ -549,6 +549,13 @@ section .container {
     }
 }
 
+@keyframes nav-item-anime {
+    0% {
+        transform: translate(-400%);
+    }
+    100% {}
+}
+
 @media only screen and (max-width: 922px) {
     .container {
         max-width: 960px;
@@ -564,11 +571,15 @@ section .container {
         top: 0;
         left: 0;
         backdrop-filter: blur(20px);
-        transition: all .15s linear;
+        transition: all .1s linear;
+    }
+    .nav-item {
+        animation: nav-item-anime 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        animation-iteration-count: 1;
     }
     .nav-list.show-nav {
         animation-delay: .25s;
-        animation: widthMobileNav-md .45s cubic-bezier(0.075, 0.82, 0.165, 1);
+        animation: widthMobileNav-md .8s cubic-bezier(0.075, 0.82, 0.165, 1);
         display: flex;
         flex-direction: column;
         width: 50%;
