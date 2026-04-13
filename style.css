@@ -1,122 +1,222 @@
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    html {
-        interpolate-size: allow-keywords;
-}
+  html {
+    interpolate-size: allow-keywords;
+  }
 }
 
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-input, button, textarea, select {
-    font: inherit;
-    outline: none;
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 p {
-    text-wrap: pretty;
+  text-wrap: pretty;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
 }
 
-#root, #__next {
-    isolation: isolate;
+#root,
+#__next {
+  isolation: isolate;
 }
 
-:root{
-    --first-color: #121212;
-    --second-color: #ffffff;
+:root {
+  --first-color: #121212;
+  --second-color: #ffffff;
 }
 
-body{
-    font-family: "Montserrat", sans-serif;
-    background: var(--first-color);
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--first-color);
 }
 
-a{
-    text-decoration: none;
-    color: var(--second-color);
+a {
+  text-decoration: none;
+  color: var(--second-color);
 }
 
-.container{
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 2em;
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2em;
 }
 
-.flex-container{
-    display: flex;
+.flex-container {
+  display: flex;
 }
 
-header{
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2em 0;
+header {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 0;
 }
 
-.logo{
-    width:3em;
+.logo {
+  width: 3em;
 }
 
-ul{
-    list-style: none;
-    gap: 8em;
+ul {
+  list-style: none;
+  gap: 8em;
 }
 
-.my-id{
-    background: none;
-    outline: none;
-    border: 0.08em solid var(--second-color);
-    color: var(--second-color);
-    padding: 0.5em 1em;
-    border-radius: 0.2em;
-    cursor: pointer;
-    letter-spacing: 0.05em;
-    font-weight: 500;
+.my-id {
+  background: none;
+  outline: none;
+  border: 0.08em solid var(--second-color);
+  color: var(--second-color);
+  padding: 0.5em 1em;
+  border-radius: 0.2em;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  font-weight: 500;
 }
 
-.my-id:hover{
-    background: var(--second-color);
-    color: var(--first-color);
-    transition: 0.3s ease-in-out;
+.my-id:hover {
+  background: var(--second-color);
+  color: var(--first-color);
+  transition: 0.3s ease-in-out;
+}
+
+section {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--second-color);
+  padding: 3em 0;
+}
+
+.left-side {
+  width: 60%;
+}
+
+.right-side {
+  width: 30%;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.profile-pic {
+  width: 100%;
+}
+
+.social-links {
+  padding: 3em 0;
+  gap: 2em;
+}
+
+.social-links img {
+  width: 2em;
 }
 
 @media only screen and (max-width: 1200px) {
   .container {
     max-width: 1140px;
   }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 922px) {
   .container {
     max-width: 960px;
+    padding: 0 3em;
   }
 
-  nav{
+  nav {
     display: none;
+  }
+
+  section {
+    flex-direction: column;
+    padding: 1em 0;
+  }
+
+  .right-side {
+    order: 1;
+    width: 100%;
+  }
+
+  .profile-pic {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .left-side {
+    width: 100%;
+    order: 2;
+  }
+
+  .title {
+    margin-top: 0.5em;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
   }
 }
 
@@ -131,12 +231,24 @@ ul{
     max-width: 540px;
   }
 
-  .my-id{
+  .my-id {
     display: none;
   }
 
-  header{
+  header {
     justify-content: center;
-    padding: 3em 0;
+    padding: 2em 0;
+  }
+
+  section{
+    padding: 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.7rem;
   }
 }
