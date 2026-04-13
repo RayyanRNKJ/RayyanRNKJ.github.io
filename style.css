@@ -43,3 +43,100 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
     isolation: isolate;
 }
+
+:root{
+    --first-color: #121212;
+    --second-color: #ffffff;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    background: var(--first-color);
+}
+
+a{
+    text-decoration: none;
+    color: var(--second-color);
+}
+
+.container{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.flex-container{
+    display: flex;
+}
+
+header{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 0;
+}
+
+.logo{
+    width:3em;
+}
+
+ul{
+    list-style: none;
+    gap: 8em;
+}
+
+.my-id{
+    background: none;
+    outline: none;
+    border: 0.08em solid var(--second-color);
+    color: var(--second-color);
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.my-id:hover{
+    background: var(--second-color);
+    color: var(--first-color);
+    transition: 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media only screen and (max-width: 922px) {
+  .container {
+    max-width: 960px;
+  }
+
+  nav{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .my-id{
+    display: none;
+  }
+
+  header{
+    justify-content: center;
+    padding: 3em 0;
+  }
+}
